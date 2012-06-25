@@ -1,8 +1,5 @@
 import twitter
 api=twitter.Api(consumer_key='QmnaT4d2f2u6VXTjzkElw',consumer_secret='wZb0CGESCSv1EO5Fc42d7hevNPo7yAFdcs0XZaAe5bE',access_token_key='97845768-fc1dF4oieEknwZFR9YHyA9jklLAdVKO2spdbAQJ3M',access_token_secret='ZSvuI5eyzZLMkCFrfiiEwbpE2kR1WzEazaxdHiJyDxI')
-sts = api.GetUserTimeline('rahul581')
-print [s.id for s in sts]
-
 sts=api.GetFriends()
 i=0
 for user in sts:

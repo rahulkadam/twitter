@@ -1,0 +1,9 @@
+<html>
+<body bgcolor=red>
+HIIIIIIIIIIIIIII<br>
+THIS IS LOGIN PAGE..<br>
+<a href="/login" title="login">login</a><br>
+<a href="/log1" title="log1"> log1</a><br>
+<a href="/rating"  title="rating">rating</a><br>
+</body>
+</html>

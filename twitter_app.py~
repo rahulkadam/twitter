@@ -27,12 +27,21 @@ def Cal_Messages():
     for user2 in sts2:
         k=k+1;
     return k
+
+#*****************************************************************
+def Cal_Status():
+    sts2 = api.GetUserTimeline('rahul581')
+    k=0
+    for user2 in sts2:
+        k=k+1;
+    return k
 #*****************************************************************
 def display():
     friends=Cal_Friends()
     followers=Cal_Followers()
     msg=Cal_Messages() 
-    return "TOTAL NUM OF FRIENDS ARE:: %d  TOTAL FOLLOWER:: %d TOTAL MESSAGE:: %d" %(friends,followers,msg) 
+    st=Cal_Status()
+    return "TOTAL NUM OF FRIENDS ARE:: %d  TOTAL FOLLOWER:: %d TOTAL MESSAGE:: %d TOTAL NUM OF STATUS:: %d" %(friends,followers,msg,st) 
 
 #*****************************************************************
 

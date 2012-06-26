@@ -2,8 +2,6 @@ import flask,flask.views
 #from flask.ext.fillin import FormWrapper
 app=flask.Flask(__name__)
 #********************************************
-#***********************************************
-
 class View(flask.views.MethodView):
     def get(self):
 #        return hello(name="ashish")    
@@ -16,7 +14,6 @@ class View(flask.views.MethodView):
 app.add_url_rule("/hello/name=/<name>/",view_func=View.as_view("main"), methods=['hello','GET','POST'])
 app.add_url_rule("/",view_func=View.as_view("main"), methods=['GET','POST'])
 app.add_url_rule("/login",view_func=View.as_view("main"), methods=['GET','POST'])
-
 
 app.debug = True
 app.run()

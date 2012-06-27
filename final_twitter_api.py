@@ -1,14 +1,12 @@
 import flask,flask.views
 import twitter
-import os
 app=flask.Flask(__name__)
-app.secret_key="twitter_secret"
 
 class View(flask.views.MethodView):
     def get(self):
-        return flask.render_template("home_page.html")
+        return flask.render_template("login.html")
     def post(self):
-        username=flask.request.form["username"]
+        username=flask.request.form["name"]
         api = twitter.Api()
 	sts = api.GetUserTimeline(username)
 	str1='none'
@@ -20,13 +18,8 @@ class View(flask.views.MethodView):
             user_date=user2.created_at   
             relative_date=user2.relative_created_at
             break
-        flask.flash(user_name)
-        flask.flash(user_follower)
-        flask.flash(user_friend)
-        flask.flash(user_status)
-        flask.flash(user_date)
-        flask.flash(relative_date)      
-        return self.get() 
+        return "NAME OF USER::%s TOTAL NUM OF FRIENDS ARE:: %d  TOTAL FOLLOWER:: %d TOTAL MESSAGE:: %d TOTAL NUM OF STATUS:: %s" %(str(user_name),user_friend,user_follower,user_status,str(user_date)) 
+
          
 app.add_url_rule("/",view_func=View.as_view("main"), methods=['GET','POST'])
 app.debug = True

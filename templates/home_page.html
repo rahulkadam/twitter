@@ -4,12 +4,12 @@
           Login   ::<input type=text name=username><br>
           <input type=submit name="submit" value="Submit">
      </form><br><br>
-     
      {% with messages = get_flashed_messages() %}
           {% if messages %}
                Result:: 
                <pre>
                    {% for message in messages %}
+        <br>
 {{message}}
                    {% endfor %} 
                </pre>

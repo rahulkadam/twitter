@@ -10,6 +10,7 @@
                Result:: 
                <pre>
                    {% for message in messages %}
+        <br>
 {{message}}
                    {% endfor %} 
                </pre>

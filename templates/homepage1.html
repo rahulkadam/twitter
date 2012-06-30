@@ -1,0 +1,23 @@
+<html>
+<title>
+twitter_app
+</title>
+     <body bgcolor=gray>
+     <form method="post">
+        <br><br><br>
+          <center>Login   ::<input type=text name=username><br>
+          <input type=submit name="submit" value="Submit"></center>
+     </form><br><br>
+     {% with messages = get_flashed_messages() %}
+          {% if messages %}
+               
+               <pre>
+                   {% for message in messages %}
+     {{message}}          
+
+                   {% endfor %} 
+               </pre>
+          {% endif %}
+     {% endwith %}
+</body>
+</html>
